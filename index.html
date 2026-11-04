@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Badak Jawa (Rhinoceros sondaicus) – Satwa Langka Indonesia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;color:#2b2b2b;font:22px/1.3 VT323,"Courier New",monospace;
+background:conic-gradient(rgba(0,0,0,.13) 25%,transparent 0 50%,rgba(0,0,0,.13) 0 75%,transparent 0) 0 0/32px 32px,conic-gradient(rgba(255,255,255,.05) 25%,transparent 0 50%,rgba(255,255,255,.05) 0 75%,transparent 0) 16px 16px/64px 64px,#7a4f2a;min-height:100vh}
+header{position:relative;text-align:center;padding:calc(28px + env(safe-area-inset-top,0px)) 16px 0;background:linear-gradient(#5aa7e8 0,#8fd0f5 100%);border-bottom:0}
+header::after{content:"";display:block;height:34px;margin:0 -16px;background:linear-gradient(#7bc043 0 14px,#5d9b3a 14px 18px,#7a4f2a 18px)}
+h1{font:400 clamp(1.5rem,8.5vw,3rem)/1.15 "Press Start 2P",monospace;margin:10px 0 6px;color:#e8e8e8;text-shadow:3px 3px 0 #3b3b3b,6px 6px 0 #1c1c1c}
+.sub{max-width:36ch;margin:0 auto 4px;color:#14233a;font-size:1.25rem}
+.splash{position:absolute;right:6%;top:92px;font:400 .72rem "Press Start 2P",monospace;color:#fcdb05;text-shadow:2px 2px 0 #3f3600;transform:rotate(-16deg);animation:sp 1s steps(4) infinite alternate}
+@keyframes sp{to{transform:rotate(-16deg) scale(1.18)}}
+#rhino{width:min(210px,52vw);margin:6px auto -6px;position:relative;z-index:1;animation:bob 1.2s steps(2) infinite}
+#rhino svg{display:block;width:100%;height:auto;shape-rendering:crispEdges}
+@keyframes bob{50%{transform:translateY(-6px)}}
+main{max-width:780px;margin:0 auto;padding:26px 14px 130px}
+.panel{background:#c6c6c6;border:4px solid;border-color:#fff #555 #555 #fff;box-shadow:0 0 0 4px #000,8px 8px 0 4px rgba(0,0,0,.35);padding:18px 16px}
+.view{display:none}.view.active{display:block}
+.view.active>*{animation:pop .4s steps(6) both}
+.view.active>*:nth-child(2){animation-delay:.06s}.view.active>*:nth-child(3){animation-delay:.12s}.view.active>*:nth-child(4){animation-delay:.18s}.view.active>*:nth-child(n+5){animation-delay:.24s}
+@keyframes pop{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+h2{font:400 1rem/1.5 "Press Start 2P",monospace;margin:0 0 14px;padding-bottom:10px;border-bottom:4px solid #8b8b8b;color:#373737}
+p{margin:0 0 12px;font-size:1.3rem}
+sup a{color:#a01e1e;text-decoration:none;font:400 .85rem "Press Start 2P",monospace;padding:0 1px}
+sup a:hover,sup a:focus-visible{background:#fcdb05;outline:none}
+.fact{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:14px 0}
+.fact div{background:#8b8b8b;border:4px solid;border-color:#373737 #fff #fff #373737;padding:8px 10px;color:#fff}
+.fact b{display:block;font:400 .95rem/1.4 "Press Start 2P",monospace;color:#fcdb05;text-shadow:2px 2px 0 #3f3600}
+.fact span{font-size:1.05rem}
+figure{margin:18px 0}
+.ph{border:8px solid #6b4a2b;box-shadow:0 0 0 3px #000,inset 0 0 0 3px rgba(0,0,0,.4);background:#2b2b2b}
+img{display:block;width:100%;height:auto;min-height:170px;background:#555}
+figcaption{font-size:1rem;color:#444;margin-top:10px}
+.lead{background:#3b3b3b;color:#fff;padding:14px;margin:14px 0;border-left:10px solid #c0392b;font-size:1.25rem}
+.lead strong{display:block;font:400 .85rem/1.5 "Press Start 2P",monospace;color:#fcdb05;margin-bottom:6px}
+.lead sup a{color:#fcdb05}
+.gauge{display:grid;grid-template-columns:repeat(9,1fr);gap:4px;margin:16px 0}
+.gauge span{background:#8b8b8b;border:3px solid;border-color:#373737 #fff #fff #373737;color:#fff;text-align:center;font:400 .5rem/1 "Press Start 2P",monospace;padding:12px 0}
+.gauge .on{background:#c0392b;animation:glow .8s steps(2) infinite alternate}
+@keyframes glow{to{background:#f2644e;box-shadow:0 0 0 3px #fcdb05}}
+.bar{margin:12px 0}.bar p{margin:0 0 4px;font-size:1.15rem}
+.bar i{display:block;height:24px;background:repeating-linear-gradient(90deg,#7bd33a 0 14px,#3f8f1f 14px 16px);border:3px solid #000;box-shadow:inset 0 5px 0 rgba(255,255,255,.35),inset 0 -5px 0 rgba(0,0,0,.25);transform-origin:left;animation:grow .9s steps(10) both}
+@keyframes grow{from{transform:scaleX(0)}}
+.mapbox{border:8px solid #6b4a2b;box-shadow:0 0 0 3px #000;margin:12px 0}
+.map{height:340px;width:100%;border:0;display:block;background:#555}
+.cap{font-size:1rem;color:#444}
+.strat{list-style:none;margin:0;padding:0}
+.strat li{display:grid;grid-template-columns:48px 1fr;gap:12px;padding:12px 0;border-top:4px solid #8b8b8b}
+.strat li::before{content:"";width:40px;height:40px;border:3px solid #000;box-shadow:inset -7px -7px 0 rgba(0,0,0,.3),inset 7px 7px 0 rgba(255,255,255,.3);background:#7bc043}
+.strat li:nth-child(2)::before{background:#4aedd9}.strat li:nth-child(3)::before{background:#c0392b}.strat li:nth-child(4)::before{background:#fcdb05}.strat li:nth-child(5)::before{background:#3ddc84}
+.strat strong{font:400 .72rem/1.6 "Press Start 2P",monospace;color:#373737}
+.strat p{margin:4px 0 0;font-size:1.2rem}
+ol.src{padding-left:22px;font-size:1.1rem;word-break:break-word}
+ol.src li{padding:4px}ol.src li.hl{background:#fcdb05;animation:pop .4s steps(6)}
+ol.src a{color:#1a5fb4}
+footer{text-align:center;color:#e8d9bf;font-size:1.05rem;padding:0 14px 120px;text-shadow:2px 2px 0 #000}
+#hb{position:fixed;left:0;right:0;bottom:0;z-index:20;display:flex;justify-content:center;gap:4px;padding:8px 6px calc(8px + env(safe-area-inset-bottom,0px));background:rgba(0,0,0,.6)}
+#hb button{position:relative;flex:1;max-width:58px;aspect-ratio:1;background:#8b8b8b;border:4px solid;border-color:#373737 #fff #fff #373737;font-size:1.35rem;line-height:1;cursor:pointer;padding:0;transition:transform .12s steps(2)}
+#hb button b{position:absolute;left:3px;top:1px;font:400 .95rem VT323,monospace;color:#fff;text-shadow:1px 1px 0 #000}
+#hb button[aria-current=true]{background:#aaa;outline:4px solid #fff;outline-offset:1px;transform:translateY(-6px)}
+#hb button:focus-visible{outline:4px solid #fcdb05}
+#tip{position:fixed;left:0;right:0;bottom:calc(84px + env(safe-area-inset-bottom,0px));text-align:center;z-index:20;pointer-events:none;font:400 .75rem "Press Start 2P",monospace;color:#fff;text-shadow:2px 2px 0 #000;opacity:0}
+#tip.on{animation:tip 2s steps(8) both}
+@keyframes tip{0%,70%{opacity:1}100%{opacity:0}}
+#ov{position:fixed;inset:0;z-index:50;display:grid;pointer-events:none}
+#ov div{opacity:0;box-shadow:inset -4px -4px 0 rgba(0,0,0,.35),inset 4px 4px 0 rgba(255,255,255,.18)}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<header>
+<div class="splash" aria-hidden="true">Kritis!</div>
+<h1>BADAK JAWA</h1>
+<p class="sub">Rhinoceros sondaicus, badak bercula satu yang kini hanya bertahan di Taman Nasional Ujung Kulon.</p>
+<div id="rhino" role="img" aria-label="Badak Jawa versi piksel"></div>
+</header>
+<main>
+<section class="view panel" id="tentang">
+<h2>Tentang Badak Jawa</h2>
+<p>Badak Jawa dulu tersebar luas di Asia Selatan dan Asia Tenggara, tetapi sebagian besar wilayah jelajahnya hilang akibat perburuan dan hilangnya habitat.<sup><a href="#s2">[2]</a></sup> Badak Jawa terakhir di daratan Asia Tenggara ditembak pemburu di Vietnam pada 2010.<sup><a href="#s1">[1]</a></sup> Kini spesies ini hanya hidup di Indonesia, yaitu di Taman Nasional Ujung Kulon, Jawa.<sup><a href="#s3">[3]</a></sup></p>
+<div class="fact">
+<div><b>&lt;100</b><span>individu tersisa<sup><a href="#s1">[1]</a></sup></span></div>
+<div><b>CR</b><span>status IUCN<sup><a href="#s1">[1]</a></sup></span></div>
+<div><b>900–2.300 kg</b><span>kisaran bobot<sup><a href="#s1">[1]</a></sup></span></div>
+<div><b>1,5–1,7 m</b><span>tinggi bahu<sup><a href="#s1">[1]</a></sup></span></div>
+</div>
+<figure>
+<!-- GANTI: unggah foto ke folder "foto" di repository -->
+<div class="ph"><img src="foto/badak-1.jpg" alt="Badak Jawa di Taman Nasional Ujung Kulon"></div>
+<figcaption>Foto 1. Badak Jawa di Taman Nasional Ujung Kulon. Sumber foto: (isi nama fotografer/situs, mis. Wikimedia Commons).</figcaption>
+</figure>
+</section>
+<section class="view panel" id="habitat">
+<h2>Habitat dan sebaran</h2>
+<p>Populasi liar badak Jawa satu-satunya berada di Taman Nasional Ujung Kulon.<sup><a href="#s2">[2]</a></sup> Taman nasional ini juga rumah bagi 29 spesies mamalia lain, termasuk macan tutul Jawa yang berstatus Critically Endangered dan banteng yang berstatus Endangered.<sup><a href="#s4">[4]</a></sup></p>
+<p>Tanaman palem arenga yang bersifat invasif tumbuh di dalam taman nasional dan mengurangi pakan badak. Pengendaliannya memulihkan pakan dan menambah daya dukung taman nasional bagi populasi badak.<sup><a href="#s1">[1]</a></sup></p>
+<figure>
+<div class="ph"><img src="foto/badak-2.jpg" alt="Lanskap hutan Taman Nasional Ujung Kulon"></div>
+<figcaption>Foto 2. Lanskap Taman Nasional Ujung Kulon. Sumber foto: (isi sumber).</figcaption>
+</figure>
+</section>
+<section class="view panel" id="peta">
+<h2>Peta lokasi habitat</h2>
+<!-- GANTI: di Google My Maps pilih Share > Embed on my site, salin alamat src dari kode iframe -->
+<div class="mapbox"><iframe class="map" src="GANTI_DENGAN_LINK_EMBED_MY_MAPS" title="Peta habitat Badak Jawa" loading="lazy"></iframe></div>
+<p class="cap">Peta 1. Lokasi Taman Nasional Ujung Kulon, habitat terakhir badak Jawa, dibuat dengan Google My Maps. Data lokasi mengacu pada sumber [3].</p>
+</section>
+<section class="view panel" id="populasi">
+<h2>Populasi</h2>
+<p>Angka populasi berbeda-beda tergantung sumbernya. Batang di bawah dibuat terhadap skala 100 individu.</p>
+<div class="bars">
+<div class="bar"><p>Sensus terakhir sebelum 2019: 72 individu<sup><a href="#s4">[4]</a></sup></p><i style="width:72%"></i></div>
+<div class="bar"><p>Perkiraan sebelum perburuan: 76 individu<sup><a href="#s7">[7]</a></sup></p><i style="width:76%"></i></div>
+<div class="bar"><p>Perkiraan minimum IUCN: ±50 individu<sup><a href="#s2">[2]</a></sup></p><i style="width:50%"></i></div>
+<div class="bar"><p>Perkiraan pemerintah Indonesia: 87–100 individu<sup><a href="#s5">[5]</a></sup></p><i style="width:87%"></i></div>
+</div>
+<p>Perkiraan turun dari 76 menjadi sekitar 50 individu setelah perburuan.<sup><a href="#s7">[7]</a></sup> Meski begitu, kamera jebak merekam kelahiran anak badak di Ujung Kulon pada Februari 2026.<sup><a href="#s8">[8]</a></sup></p>
+</section>
+<section class="view panel" id="iucn">
+<h2>Status menurut IUCN</h2>
+<div class="lead"><strong>Critically Endangered (Kritis)</strong>IUCN menetapkan badak Jawa sebagai Critically Endangered karena jumlahnya menurun dan akibat perburuan.<sup><a href="#s8">[8]</a></sup></div>
+<p>Daftar Merah IUCN membagi spesies ke dalam sembilan kategori.<sup><a href="#s9">[9]</a></sup> Critically Endangered adalah kategori risiko tertinggi sebelum kepunahan.<sup><a href="#s7">[7]</a></sup></p>
+<div class="gauge" aria-label="Skala kategori IUCN, Badak Jawa di CR">
+<span>NE</span><span>DD</span><span>LC</span><span>NT</span><span>VU</span><span>EN</span><span class="on">CR</span><span>EW</span><span>EX</span>
+</div>
+<p>Ancaman utama:</p>
+<p>Perburuan. Kelompok pemburu mengaku membunuh 26 badak Jawa di Ujung Kulon pada 2019–2023.<sup><a href="#s3">[3]</a></sup></p>
+<p>Bencana alam. Karena seluruh populasi berada di satu kawasan, satu bencana besar bisa memusnahkan spesies ini. Kawasan tersebut rentan terhadap gempa dan tsunami.<sup><a href="#s6">[6]</a></sup> Letusan Gunung Anak Krakatau di dekat habitat pernah memicu kekhawatiran, tetapi badak dilaporkan aman.<sup><a href="#s2">[2]</a></sup></p>
+<figure>
+<div class="ph"><img src="foto/badak-3.jpg" alt="Badak Jawa terekam kamera jebak"></div>
+<figcaption>Foto 3. Badak Jawa terekam kamera jebak. Sumber foto: (isi sumber).</figcaption>
+</figure>
+</section>
+<section class="view panel" id="strategi">
+<h2>Strategi pelestarian</h2>
+<p>Strategi berikut disusun dari upaya konservasi pada sumber yang dikutip.</p>
+<ul class="strat">
+<li><div><strong>Perketat patroli dan pemantauan</strong><p>Taman Nasional Ujung Kulon memantau induk dan anak badak serta seluruh populasi lewat patroli, teknologi, dan pengelolaan habitat.<sup><a href="#s8">[8]</a></sup></p></div></li>
+<li><div><strong>Tegakkan hukum atas perburuan</strong><p>Otoritas Indonesia menyelidiki dan menuntut kelompok pemburu badak Jawa sejak Juli 2023.<sup><a href="#s3">[3]</a></sup> Tujuan mitra konservasi adalah melindungi setiap individu di Ujung Kulon.<sup><a href="#s1">[1]</a></sup></p></div></li>
+<li><div><strong>Kendalikan palem arenga</strong><p>Mengendalikan tanaman invasif ini memulihkan pakan badak dan menambah daya dukung taman nasional.<sup><a href="#s1">[1]</a></sup></p></div></li>
+<li><div><strong>Bentuk populasi kedua</strong><p>Karena seluruh populasi berada di satu kawasan, mitra konservasi menargetkan populasi kedua di lokasi terpisah.<sup><a href="#s1">[1]</a></sup><sup><a href="#s6">[6]</a></sup></p></div></li>
+<li><div><strong>Kelola genetik populasi kecil</strong><p>Indonesia mulai memindahkan badak antar-area di dalam Ujung Kulon untuk mengelola populasi kecil dengan keragaman genetik terbatas.<sup><a href="#s2">[2]</a></sup></p></div></li>
+</ul>
+</section>
+<section class="view panel" id="sumber">
+<h2>Daftar sumber</h2>
+<ol class="src">
+<li id="s1">Re:wild. Javan Rhinos. <a href="https://www.rewild.org/wildlife/javan-rhinos">rewild.org</a></li>
+<li id="s2">Mongabay (September 2026). Javan rhinos survive eruption in Indonesia, but single habitat leaves species vulnerable. <a href="https://news.mongabay.com/2026/09/javan-rhinos-survive-eruption-in-indonesia-but-single-habitat-leaves-species-vulnerable/">news.mongabay.com</a></li>
+<li id="s3">International Rhino Foundation. Javan rhino. <a href="https://rhinos.org/about-rhinos/rhino-species/javan-rhino/">rhinos.org</a></li>
+<li id="s4">IUCN World Heritage Outlook (2025). Ujung Kulon National Park, 2025 Conservation Outlook Assessment. <a href="https://rhinoresourcecenter.com/wp-content/uploads/2026/01/2025-Ujung-Kulon-National-Park-2025-COA.pdf">rhinoresourcecenter.com</a></li>
+<li id="s5">Nhan Dan / ANTARA. Javan rhinoceros calf captured on camera in Ujung Kulon National Park. <a href="https://en.daibieunhandan.vn/print/10383132.html">en.daibieunhandan.vn</a></li>
+<li id="s6">SciTechDaily. One of the World's Rarest Animals Is Facing a Devastating Problem: It Can't Find a Mate. <a href="https://scitechdaily.com/one-of-the-worlds-rarest-animals-is-facing-a-devastating-problem-it-cant-find-a-mate/">scitechdaily.com</a></li>
+<li id="s7">Seasia.co (31 Agustus 2025). Javan and Sumatran rhinos are on the brink of extinction. <a href="https://seasia.co/2025/08/31/javan-and-sumatran-rhinos-are-on-the-brink-of-extinction">seasia.co</a></li>
+<li id="s8">Voice of Indonesia / RRI (4 Februari 2026). Javan Rhino Calf Caught on Camera in Ujung Kulon National Park. <a href="https://rri.co.id/voice-of-indonesia/national/2160554/javan-rhino-calf-caught-on-camera-in-ujung-kulon-national-park">rri.co.id</a></li>
+<li id="s9">Rainforest Rescue (9 September 2021). Indonesia: climate crisis threatens Komodo dragons (penjelasan sembilan kategori Daftar Merah IUCN). <a href="https://rainforest-rescue.org/updates/10398?t=9143">rainforest-rescue.org</a></li>
+</ol>
+</section>
+</main>
+<footer>Tugas Website Hewan Endemik Indonesia. Tekan angka 1–7 untuk pindah menu.</footer>
+<div id="tip"></div>
+<nav id="hb" aria-label="Menu utama">
+<button data-v="tentang" aria-label="Tentang"><b>1</b>🦏</button>
+<button data-v="habitat" aria-label="Habitat"><b>2</b>🌳</button>
+<button data-v="peta" aria-label="Peta"><b>3</b>🗺️</button>
+<button data-v="populasi" aria-label="Populasi"><b>4</b>📊</button>
+<button data-v="iucn" aria-label="Status IUCN"><b>5</b>⚠️</button>
+<button data-v="strategi" aria-label="Pelestarian"><b>6</b>⛏️</button>
+<button data-v="sumber" aria-label="Sumber"><b>7</b>📖</button>
+</nav>
+<div id="ov" aria-hidden="true"></div>
+<script>
+const V=['tentang','habitat','peta','populasi','iucn','strategi','sumber'];
+const N={tentang:'Tentang',habitat:'Habitat',peta:'Peta Habitat',populasi:'Populasi',iucn:'Status IUCN',strategi:'Pelestarian',sumber:'Daftar Sumber'};
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+// badak piksel
+(function(){const R=["...................h..","..................hh..","......########..####..","....############.#####","...##############e####","...###############.###","...###############..##","...##############...#.","....############......","....##..##....##......","....##..##....##......"];
+let s='<svg viewBox="0 0 22 11" xmlns="http://www.w3.org/2000/svg">';
+R.forEach((r,y)=>[...r].forEach((c,x)=>{if(c=='.')return;const f=c=='h'?'#f2e8c9':c=='e'?'#111':(y>=9?'#4f5349':y>=7?'#6f7369':'#8d9187');s+=`<rect x="${x}" y="${y}" width="1" height="1" fill="${f}"/>`}));
+document.getElementById('rhino').innerHTML=s+'</svg>'})();
+// overlay balok
+const ov=document.getElementById('ov'),C=8,Rw=14;ov.style.gridTemplateColumns=`repeat(${C},1fr)`;ov.style.gridTemplateRows=`repeat(${Rw},1fr)`;
+const col=['#7a4f2a','#5d9b3a','#7f7f7f','#6d4423'];
+for(let i=0;i<C*Rw;i++){const d=document.createElement('div');d.style.background=col[Math.random()*4|0];ov.appendChild(d)}
+let cur=null,busy=false;const tip=document.getElementById('tip');
+function swap(id){document.querySelectorAll('.view').forEach(v=>v.classList.toggle('active',v.id===id));
+document.querySelectorAll('#hb button').forEach(b=>b.setAttribute('aria-current',b.dataset.v===id));
+cur=id;scrollTo(0,0);try{history.replaceState(null,'','#'+id)}catch(e){}
+tip.textContent=N[id];tip.classList.remove('on');void tip.offsetWidth;tip.classList.add('on')}
+function go(id){return new Promise(res=>{if(id===cur||busy){res();return}
+if(reduce||cur===null){swap(id);res();return}
+busy=true;const cells=[...ov.children];
+const run=(a,b)=>Promise.all(cells.map(c=>c.animate([{opacity:a},{opacity:b}],{duration:240,delay:Math.random()*260,easing:'steps(4)',fill:'forwards'}).finished));
+run(0,1).then(()=>{swap(id);res();return run(1,0)}).then(()=>{cells.forEach(c=>c.getAnimations().forEach(a=>a.cancel()));busy=false})})}
+document.querySelectorAll('#hb button').forEach(b=>b.onclick=()=>go(b.dataset.v));
+addEventListener('keydown',e=>{if(e.ctrlKey||e.metaKey||e.altKey)return;const n=parseInt(e.key);if(n>=1&&n<=7)go(V[n-1])});
+document.addEventListener('click',e=>{const a=e.target.closest('a[href^="#s"]');if(!a)return;const m=a.getAttribute('href').match(/^#s(\d+)$/);if(!m)return;e.preventDefault();
+go('sumber').then(()=>setTimeout(()=>{const t=document.getElementById('s'+m[1]);if(t){document.querySelectorAll('ol.src li.hl').forEach(x=>x.classList.remove('hl'));t.classList.add('hl');t.scrollIntoView({block:'center'})}},60))});
+const h=location.hash.slice(1);swap(V.includes(h)?h:'tentang');
+</script>
+</body>
+</html>
